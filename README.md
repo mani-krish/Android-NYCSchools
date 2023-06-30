@@ -1,19 +1,19 @@
 As per requirement, the Native Adroid Application is built with the latest components and followed best-practices
 
-Kotlin Language
-Clean Architecture - MVVM
-Single Activity Architecture - SAA
-Design Principle - Separation of Concern
-SOLID principles
-Dependency Injection - Hilt
-Modern Application Development
-Jetpack Libraries - ViewModel, DataBinding
-Jetpack navigation
-Coroutine
-Flow
-StateFlow
-Extension Function, Scope Function, Data class, Sealed class, Enum
-Retrofit
-ConstraintLayout
-Portrait and Landscape orientation
-Light and Dark mode
+<br> Kotlin Language
+<br> Clean Architecture - MVVM
+<br> Single Activity Architecture - SAA
+<br> Design Principle - Separation of Concern
+<br> SOLID principles
+<br> Dependency Injection - Hilt
+<br> Modern Application Development
+<br> Jetpack Libraries - ViewModel, DataBinding
+<br> Jetpack navigation
+<br> Coroutine
+<br> Flow
+<br> StateFlow
+<br> Extension Function, Scope Function, Data class, Sealed class, Enum
+<br> Retrofit
+<br> ConstraintLayout
+<br> Portrait and Landscape orientation
+<br> Light and Dark mode
