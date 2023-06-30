@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NYCSchools</string>
+    <string name="message_internet_error">Please check your network connection</string>
+    <string name="message_general_error">Something went wrong!</string>
+    <string name="message_general_api_error">Error while fetching SAT Scores !</string>
+    <string name="message_app_exit">Are you sure you want to exit?</string>
+    <string name="message_no_data">No Data Found !</string>
+    <string name="title_alert">Alert</string>
+    <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_no">No</string>
+    <string name="label_yes">Yes</string>
+    <string name="text_format">%1$s, %2$s, %3$s, %4$s</string>
+    <string name="school_list_fragment_label">NYCSchools</string>
+    <string name="school_detail_fragment_label">School Info</string>
+    <string name="no_of_test_takers">Number of Test Takers : %s</string>
+    <string name="total_no_of_students">%s students</string>
+    <string name="avg_critical_reading_score">Average Critical Reading Score : %s</string>
+    <string name="avg_math_score">Average Math Score : %s</string>
+    <string name="avg_writing_score">Average Writing Score : %s</string>
+    <string name="sat_score">SAT Scores</string>
+</resources>

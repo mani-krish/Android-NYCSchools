@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="tvHeaderStyle">
+        <item name="android:textSize">@dimen/text_size_15</item>
+        <item name="android:textColor">@color/royal_blue</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="tvOverViewStyle">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="tvSubHeaderStyle">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/royal_blue</item>
+        <item name="android:textColorLink">@color/royal_blue</item>
+        <item name="android:lines">1</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="tvSubHeaderStyleII">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textColorLink">?android:attr/textColorSecondary</item>
+        <item name="android:lines">1</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+    <style name="tvSubHeaderStyleI">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:lines">1</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="android:layout_marginLeft">@dimen/size_2</item>
+    </style>
+
+    <style name="tvHeaderLarge">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:lines">1</item>
+        <item name="android:padding">@dimen/size_6</item>
+        <item name="android:background">@color/mint_green</item>
+    </style>
+
+</resources>
