@@ -1,7 +1,6 @@
-JPMC Coding Challenge : NYC Schools
+**JPMC Coding Challenge : NYC Schools**
 
 This Native Adroid Application enables users to view the NYC Schools and School detail with SAT scores and it is built with the latest components, API's and best-practices
-
 <br> Kotlin Language
 <br> Clean Architecture - MVVM
 <br> Single Activity Architecture - SAA
