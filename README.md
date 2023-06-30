@@ -1,4 +1,4 @@
-As per requirement, the Native Adroid Application is built with the latest components and followed best-practices
+As per requirement, The Native Adroid Application is built with the latest components and followed best-practices
 
 <br> Kotlin Language
 <br> Clean Architecture - MVVM
@@ -6,9 +6,9 @@ As per requirement, the Native Adroid Application is built with the latest compo
 <br> Design Principle - Separation of Concern
 <br> SOLID principles
 <br> Dependency Injection - Hilt
-<br> Modern Application Development
-<br> Jetpack Libraries - ViewModel, DataBinding
-<br> Jetpack navigation
+<br> Modern and Modular Application Development
+<br> Jetpack Libraries - ViewModel, DataBinding, ViewBinding
+<br> Jetpack Navigation
 <br> Coroutine
 <br> Flow
 <br> StateFlow
