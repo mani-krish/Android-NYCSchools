@@ -1,4 +1,6 @@
-As per requirement, The Native Adroid Application is built with the latest components and followed best-practices
+JPMC Coding Challenge : NYC Schools
+
+This Native Adroid Application enables users to view the NYC Schools and School detail with SAT scores and it is built with the latest components, API's and best-practices
 
 <br> Kotlin Language
 <br> Clean Architecture - MVVM
@@ -10,10 +12,10 @@ As per requirement, The Native Adroid Application is built with the latest compo
 <br> Jetpack Libraries - ViewModel, DataBinding, ViewBinding
 <br> Jetpack Navigation
 <br> Coroutine
-<br> Flow
-<br> StateFlow
+<br> Flow, StateFlow
 <br> Extension Function, Scope Function, Data class, Sealed class, Enum
 <br> Retrofit
 <br> ConstraintLayout
 <br> App will support Portrait and Landscape orientation
 <br> App will support Light and Dark mode
+
