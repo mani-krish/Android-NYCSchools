@@ -117,20 +117,37 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWebsite"
+                android:id="@+id/tvLocation"
                 style="@style/tvSubHeaderStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
+                android:autoLink="map"
+                android:drawableStart="@drawable/ic_place"
+                android:drawablePadding="@dimen/drawablePaddingI"
+                android:gravity="start"
+                android:text="@{@string/text_format(itemSchool.schoolAddress, itemSchool.schoolCity, itemSchool.schoolState, itemSchool.schoolZip)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{itemSchool.schoolAddress.equals("") ? View.GONE : View.VISIBLE}'
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCardView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWebsite"
+                style="@style/tvSubHeaderStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:autoLink="web"
                 android:drawableStart="@drawable/ic_web"
                 android:drawablePadding="@dimen/drawablePaddingI"
+                android:gravity="start"
                 android:text="@{itemSchool.schoolWebsite}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:visibility='@{itemSchool.schoolWebsite.equals("") ? View.GONE : View.VISIBLE}'
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutCardView" />
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvEmail"
@@ -140,6 +157,7 @@
                 android:autoLink="email"
                 android:drawableStart="@drawable/ic_mail"
                 android:drawablePadding="@dimen/drawablePaddingI"
+                android:gravity="start"
                 android:text="@{itemSchool.schoolEmail}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:visibility='@{itemSchool.schoolEmail.equals("") ? View.GONE : View.VISIBLE}'
@@ -155,6 +173,7 @@
                 android:autoLink="phone"
                 android:drawableStart="@drawable/ic_contact"
                 android:drawablePadding="@dimen/drawablePaddingI"
+                android:gravity="start"
                 android:text="@{itemSchool.schoolPhoneNumber}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:visibility='@{itemSchool.schoolPhoneNumber.equals("") ? View.GONE : View.VISIBLE}'
@@ -166,7 +185,7 @@
                 android:id="@+id/progressbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:indeterminateTint="@color/teal_700"
                 android:progressTint="@color/teal_700"
                 app:layout_constraintBottom_toBottomOf="parent"

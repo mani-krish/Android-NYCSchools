@@ -40,10 +40,9 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvLocation"
-                style="@style/tvSubHeaderStyle"
+                style="@style/tvSubHeaderStyleII"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="map"
                 android:drawableStart="@drawable/ic_place"
                 android:drawablePadding="@dimen/drawablePadding"
                 android:text="@{@string/text_format(item.schoolAddress, item.schoolCity, item.schoolState, item.schoolZip)}"
