@@ -15,5 +15,5 @@ As per requirement, The Native Adroid Application is built with the latest compo
 <br> Extension Function, Scope Function, Data class, Sealed class, Enum
 <br> Retrofit
 <br> ConstraintLayout
-<br> Portrait and Landscape orientation
-<br> Light and Dark mode
+<br> App will support Portrait and Landscape orientation
+<br> App will support Light and Dark mode
