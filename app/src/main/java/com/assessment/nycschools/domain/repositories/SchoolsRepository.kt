@@ -1,7 +1,7 @@
-package com.assessment.nycschools.domain.repository
+package com.assessment.nycschools.domain.repositories
 
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
 import com.assessment.nycschools.utils.ResponseHandler
 import kotlinx.coroutines.flow.Flow
 

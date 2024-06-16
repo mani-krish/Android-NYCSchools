@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/SchoolListFragment"
-        android:name="com.assessment.nycschools.presentation.fragment.SchoolListFragment"
+        android:name="com.assessment.nycschools.presentation.fragments.SchoolListFragment"
         android:label="@string/school_list_fragment_label"
         tools:layout="@layout/fragment_school_list">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SchoolDetailFragment"
-        android:name="com.assessment.nycschools.presentation.fragment.SchoolDetailFragment"
+        android:name="com.assessment.nycschools.presentation.fragments.SchoolDetailFragment"
         android:label="@string/school_detail_fragment_label"
         tools:layout="@layout/fragment_school_detail">
         <action
@@ -25,6 +25,6 @@
             app:destination="@id/SchoolListFragment" />
         <argument
             android:name="schoolArg"
-            app:argType="com.assessment.nycschools.data.model.School" />
+            app:argType="com.assessment.nycschools.data.models.School" />
     </fragment>
 </navigation>

@@ -1,8 +1,8 @@
-package com.assessment.nycschools.domain.usecase
+package com.assessment.nycschools.domain.usecases
 
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
-import com.assessment.nycschools.domain.repository.SchoolsRepository
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
+import com.assessment.nycschools.domain.repositories.SchoolsRepository
 import com.assessment.nycschools.utils.ResponseHandler
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

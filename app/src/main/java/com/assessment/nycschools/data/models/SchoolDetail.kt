@@ -1,4 +1,4 @@
-package com.assessment.nycschools.data.model
+package com.assessment.nycschools.data.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

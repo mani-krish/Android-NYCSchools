@@ -2,19 +2,11 @@
 <resources>
     <dimen name="cardElevation">4dp</dimen>
     <dimen name="cardCornerRadius">10dp</dimen>
-    <dimen name="cardContentPadding">5dp</dimen>
-    <dimen name="cardElevation_secondary">2dp</dimen>
-    <dimen name="cardCornerRadius_secondary">5dp</dimen>
-    <dimen name="cardContentPadding_secondary">2dp</dimen>
     <dimen name="drawablePadding">3dp</dimen>
     <dimen name="drawablePaddingI">8dp</dimen>
-
-    <dimen name="text_size_10">10sp</dimen>
     <dimen name="text_size_15">15sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_14">14sp</dimen>
-
-
     <dimen name="size_6">6dp</dimen>
     <dimen name="size_8">8dp</dimen>
     <dimen name="size_10">10dp</dimen>

@@ -1,7 +1,7 @@
-package com.assessment.nycschools.data.service
+package com.assessment.nycschools.data.services
 
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

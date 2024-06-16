@@ -1,4 +1,4 @@
-package com.assessment.nycschools.presentation.fragment
+package com.assessment.nycschools.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.assessment.nycschools.R
-import com.assessment.nycschools.data.model.School
+import com.assessment.nycschools.data.models.School
 import com.assessment.nycschools.databinding.FragmentSchoolListBinding
-import com.assessment.nycschools.presentation.adapter.SchoolListAdapter
-import com.assessment.nycschools.presentation.viewmodel.SchoolListViewModel
+import com.assessment.nycschools.presentation.adapters.SchoolListAdapter
+import com.assessment.nycschools.presentation.viewmodels.SchoolListViewModel
 import com.assessment.nycschools.utils.ResponseHandler
 import com.assessment.nycschools.utils.gone
 import com.assessment.nycschools.utils.showDialog
@@ -25,8 +25,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SchoolListFragment : Fragment() {
 
-    private var _binding: FragmentSchoolListBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentSchoolListBinding
 
     @Inject
     lateinit var countryListAdapter: SchoolListAdapter
@@ -39,7 +38,7 @@ class SchoolListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSchoolListBinding.inflate(inflater, container, false)
+        binding = FragmentSchoolListBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
@@ -84,32 +83,32 @@ class SchoolListFragment : Fragment() {
     private fun handleUiState(uiState: ResponseHandler<List<School>>) {
         when (uiState) {
             is ResponseHandler.Loading -> {
-                binding.progressbar.visible()
-                binding.rvCountries.gone()
-                binding.textViewFailed.gone()
+                binding.apply {
+                    progressbar.visible()
+                    rvCountries.gone()
+                    textViewFailed.gone()
+                }
             }
 
             is ResponseHandler.Success -> {
-                binding.progressbar.gone()
-                binding.rvCountries.visible()
-                binding.textViewFailed.gone()
+                binding.apply {
+                    progressbar.gone()
+                    rvCountries.visible()
+                    textViewFailed.gone()
+                }
                 uiState.data?.let { countryListAdapter.setData(it) }
             }
 
-            is ResponseHandler.Error -> {
-                binding.progressbar.gone()
-                binding.rvCountries.gone()
-                binding.textViewFailed.visible()
-                binding.textViewFailed.text = uiState.message
-                binding.layoutParent.showSnackBar(getString(R.string.message_general_error))
+            is ResponseHandler.Failure -> {
+                binding.apply {
+                    progressbar.gone()
+                    rvCountries.gone()
+                    textViewFailed.visible()
+                    textViewFailed.text = uiState.message
+                    layoutParent.showSnackBar(getString(R.string.message_general_error))
+                }
             }
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 
 }

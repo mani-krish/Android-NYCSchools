@@ -6,15 +6,15 @@
 
         <variable
             name="viewModel"
-            type="com.assessment.nycschools.presentation.viewmodel.SchoolDetailViewModel" />
+            type="com.assessment.nycschools.presentation.viewmodels.SchoolDetailViewModel" />
 
         <variable
             name="itemSAT"
-            type="com.assessment.nycschools.data.model.SchoolDetail" />
+            type="com.assessment.nycschools.data.models.SchoolDetail" />
 
         <variable
             name="itemSchool"
-            type="com.assessment.nycschools.data.model.School" />
+            type="com.assessment.nycschools.data.models.School" />
 
         <import type="android.view.View" />
 

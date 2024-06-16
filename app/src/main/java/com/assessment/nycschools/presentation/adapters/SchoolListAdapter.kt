@@ -1,4 +1,4 @@
-package com.assessment.nycschools.presentation.adapter
+package com.assessment.nycschools.presentation.adapters
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.assessment.nycschools.R
-import com.assessment.nycschools.data.model.School
+import com.assessment.nycschools.data.models.School
 import com.assessment.nycschools.databinding.ItemSchoolBinding
 import javax.inject.Inject
 
 class SchoolListAdapter @Inject constructor() :
     RecyclerView.Adapter<SchoolListAdapter.CountryViewHolder>() {
 
-    private var dataSet: ArrayList<School> = ArrayList()
+    private var dataSet = mutableListOf<School>()
 
     inner class CountryViewHolder(private val binding: ItemSchoolBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -46,7 +46,7 @@ class SchoolListAdapter @Inject constructor() :
 
     /*Set the dataset to adapter list instance*/
     fun setData(list: List<School>) {
-        this.dataSet = list as ArrayList<School>
+        this.dataSet = list as MutableList
         notifyDataSetChanged()
     }
 

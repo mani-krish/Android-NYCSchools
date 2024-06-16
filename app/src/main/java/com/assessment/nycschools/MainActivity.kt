@@ -19,9 +19,6 @@ class MainActivity : AppCompatActivity() {
         keepSplashScreenFor5Seconds()
         setContentView(R.layout.activity_main)
 
-        // Because we're creating the NavHostFragment using FragmentContainerView, we must
-        // retrieve the NavController directly from the NavHostFragment instead
-
         // Get the navigation host fragment from this Activity
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -34,15 +31,14 @@ class MainActivity : AppCompatActivity() {
             .setupWithNavController(navController, appBarConfiguration)
     }
 
-    /* Keep splash screen on-screen for longer period. This is useful if you need to load data when splash screen is appearing */
     private fun keepSplashScreenFor5Seconds() {
         val content = findViewById<View>(android.R.id.content)
-        content.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-            override fun onPreDraw(): Boolean {
-                Thread.sleep(1000)
-                content.viewTreeObserver.removeOnPreDrawListener(this)
-                return true
-            }
-        })
+        content.viewTreeObserver.addOnPreDrawListener(
+            object : ViewTreeObserver.OnPreDrawListener {
+                override fun onPreDraw(): Boolean {
+                    content.viewTreeObserver.removeOnPreDrawListener(this)
+                    return true
+                }
+            })
     }
 }

@@ -1,9 +1,9 @@
 package com.assessment.nycschools.di
 
-import com.assessment.nycschools.data.repository.SchoolRepositoryImpl
-import com.assessment.nycschools.data.service.WebService
-import com.assessment.nycschools.data.source.RemoteDataSource
-import com.assessment.nycschools.domain.repository.SchoolsRepository
+import com.assessment.nycschools.data.repositories.SchoolRepositoryImpl
+import com.assessment.nycschools.data.services.WebService
+import com.assessment.nycschools.data.datasources.RemoteDataSource
+import com.assessment.nycschools.domain.repositories.SchoolsRepository
 import com.assessment.nycschools.utils.Constants
 import com.assessment.nycschools.utils.LoggingInterceptor
 import dagger.Module
@@ -34,8 +34,8 @@ object AppModule {
     @Provides
     fun provideConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
-    @Provides
     @Singleton
+    @Provides
     fun provideOkHttpClient(loggingInterceptor: LoggingInterceptor) =
         OkHttpClient.Builder().addInterceptor(loggingInterceptor)
             .addNetworkInterceptor(loggingInterceptor).build()
@@ -54,12 +54,12 @@ object AppModule {
     fun provideApiService(retrofit: Retrofit): WebService =
         retrofit.create(WebService::class.java)
 
-    @Provides
     @Singleton
+    @Provides
     fun provideDataSource(countryApiService: WebService) = RemoteDataSource(countryApiService)
 
-    @Provides
     @Singleton
+    @Provides
     fun provideRepository(remoteDataSource: RemoteDataSource): SchoolsRepository =
         SchoolRepositoryImpl(remoteDataSource)
 }

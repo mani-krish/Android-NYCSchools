@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.assessment.nycschools.presentation.viewmodel.SchoolListViewModel" />
+            type="com.assessment.nycschools.presentation.viewmodels.SchoolListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

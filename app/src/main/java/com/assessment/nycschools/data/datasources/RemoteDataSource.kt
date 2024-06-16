@@ -1,8 +1,8 @@
-package com.assessment.nycschools.data.source
+package com.assessment.nycschools.data.datasources
 
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
-import com.assessment.nycschools.data.service.WebService
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
+import com.assessment.nycschools.data.services.WebService
 import com.assessment.nycschools.utils.Constants
 import com.assessment.nycschools.utils.ResponseHandler
 import kotlinx.coroutines.Dispatchers
@@ -21,10 +21,10 @@ class RemoteDataSource @Inject constructor(private val api: WebService) {
                 if (response.isSuccessful) {
                     emit(ResponseHandler.Success(response.body()))
                 } else {
-                    emit(ResponseHandler.Error(response.message()))
+                    emit(ResponseHandler.Failure(response.message()))
                 }
             } catch (e: Exception) {
-                emit(ResponseHandler.Error(e.message.toString()))
+                emit(ResponseHandler.Failure(e.message.toString()))
             }
         }.flowOn((Dispatchers.IO))
 
@@ -36,10 +36,10 @@ class RemoteDataSource @Inject constructor(private val api: WebService) {
                 if (response.isSuccessful) {
                     emit(ResponseHandler.Success(response.body()))
                 } else {
-                    emit(ResponseHandler.Error(response.message()))
+                    emit(ResponseHandler.Failure(response.message()))
                 }
             } catch (e: Exception) {
-                emit(ResponseHandler.Error(e.message.toString()))
+                emit(ResponseHandler.Failure(e.message.toString()))
             }
         }.flowOn((Dispatchers.IO))
 }

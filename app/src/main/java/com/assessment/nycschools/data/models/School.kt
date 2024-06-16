@@ -1,4 +1,4 @@
-package com.assessment.nycschools.data.model
+package com.assessment.nycschools.data.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -19,5 +19,5 @@ data class School(
     @SerializedName("website") val schoolWebsite: String,
     @SerializedName("dbn") val schoolDbn: String,
     @SerializedName("overview_paragraph") val schoolOverview: String,
-    @SerializedName("total_students") val total_students: String
+    @SerializedName("total_students") val totalStudents: String
 ) : Parcelable

@@ -1,10 +1,10 @@
-package com.assessment.nycschools.data.repository
+package com.assessment.nycschools.data.repositories
 
-import com.assessment.nycschools.data.source.RemoteDataSource
-import com.assessment.nycschools.domain.repository.SchoolsRepository
+import com.assessment.nycschools.data.datasources.RemoteDataSource
+import com.assessment.nycschools.domain.repositories.SchoolsRepository
 import com.assessment.nycschools.utils.ResponseHandler
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

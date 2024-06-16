@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.assessment.nycschools.data.model.School" />
+            type="com.assessment.nycschools.data.models.School" />
 
         <import type="android.view.View" />
     </data>
@@ -59,9 +59,9 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_people"
                 android:drawablePadding="@dimen/drawablePadding"
-                android:text="@{@string/total_no_of_students(item.total_students)}"
+                android:text="@{@string/total_no_of_students(item.totalStudents)}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:visibility='@{item.total_students.equals("") ? View.GONE : View.VISIBLE}'
+                android:visibility='@{item.totalStudents.equals("") ? View.GONE : View.VISIBLE}'
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 

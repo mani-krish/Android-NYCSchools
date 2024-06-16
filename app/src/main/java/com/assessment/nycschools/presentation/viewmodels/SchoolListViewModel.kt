@@ -1,16 +1,17 @@
-package com.assessment.nycschools.presentation.viewmodel
+package com.assessment.nycschools.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.assessment.nycschools.R
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.domain.usecase.GetSchoolsUseCase
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.domain.usecases.GetSchoolsUseCase
 import com.assessment.nycschools.utils.ResourceProvider
 import com.assessment.nycschools.utils.ResponseHandler
 import com.assessment.nycschools.utils.Status
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
@@ -28,7 +29,7 @@ class SchoolListViewModel @Inject constructor(
         MutableStateFlow(ResponseHandler.Loading())
 
     // The UI collects from this StateFlow to get its state updates
-    val uiState: StateFlow<ResponseHandler<List<School>>> = _uiState
+    val uiState: StateFlow<ResponseHandler<List<School>>> = _uiState.asStateFlow()
 
     init {
         fetchCountries()
@@ -41,7 +42,7 @@ class SchoolListViewModel @Inject constructor(
                 useCase.executeSchools().onStart {
                     _uiState.value = ResponseHandler.Loading()
                 }.catch {
-                    _uiState.value = ResponseHandler.Error(it.message.toString())
+                    _uiState.value = ResponseHandler.Failure(it.message.toString())
                 }.collect {
                     when (it.status) {
                         Status.SUCCESS -> {
@@ -54,20 +55,20 @@ class SchoolListViewModel @Inject constructor(
 
                         else -> {
                             _uiState.value =
-                                ResponseHandler.Error(resourceProvider.getString(R.string.message_no_data))
+                                ResponseHandler.Failure(resourceProvider.getString(R.string.message_no_data))
                         }
                     }
                 }
             } catch (e: HttpException) {
-                _uiState.value = ResponseHandler.Error(
+                _uiState.value = ResponseHandler.Failure(
                     e.message ?: resourceProvider.getString(R.string.message_general_error)
                 )
             } catch (e: IOException) {
                 _uiState.value =
-                    ResponseHandler.Error(resourceProvider.getString(R.string.message_internet_error))
+                    ResponseHandler.Failure(resourceProvider.getString(R.string.message_internet_error))
             } catch (e: Exception) {
                 _uiState.value =
-                    ResponseHandler.Error(resourceProvider.getString(R.string.message_general_error))
+                    ResponseHandler.Failure(resourceProvider.getString(R.string.message_general_error))
             }
         }
     }

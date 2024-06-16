@@ -1,4 +1,4 @@
-package com.assessment.nycschools.presentation.fragment
+package com.assessment.nycschools.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.assessment.nycschools.R
-import com.assessment.nycschools.data.model.School
-import com.assessment.nycschools.data.model.SchoolDetail
+import com.assessment.nycschools.data.models.School
+import com.assessment.nycschools.data.models.SchoolDetail
 import com.assessment.nycschools.databinding.FragmentSchoolDetailBinding
-import com.assessment.nycschools.presentation.viewmodel.SchoolDetailViewModel
+import com.assessment.nycschools.presentation.viewmodels.SchoolDetailViewModel
 import com.assessment.nycschools.utils.Constants
 import com.assessment.nycschools.utils.ResponseHandler
 import com.assessment.nycschools.utils.gone
@@ -26,8 +26,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SchoolDetailFragment : Fragment() {
 
-    private var _binding: FragmentSchoolDetailBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentSchoolDetailBinding
 
     private val args: SchoolDetailFragmentArgs by navArgs()
 
@@ -39,7 +38,7 @@ class SchoolDetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSchoolDetailBinding.inflate(inflater, container, false)
+        binding = FragmentSchoolDetailBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         return binding.root
@@ -89,23 +88,22 @@ class SchoolDetailFragment : Fragment() {
                     if (it.isNotEmpty()) {
                         binding.itemSAT = it[0]
                     } else {
-                        binding.itemSAT = SchoolDetail()
-                        binding.progressbar.gone()
-                        binding.layoutParent.showSnackBar(getString(R.string.message_general_api_error))
+                        binding.apply {
+                            itemSAT = SchoolDetail()
+                            progressbar.gone()
+                            layoutParent.showSnackBar(getString(R.string.message_general_api_error))
+                        }
                     }
                 }
             }
 
-            is ResponseHandler.Error -> {
-                binding.progressbar.gone()
-                binding.layoutParent.showSnackBar(getString(R.string.message_general_api_error))
+            is ResponseHandler.Failure -> {
+                binding.apply {
+                    progressbar.gone()
+                    layoutParent.showSnackBar(getString(R.string.message_general_api_error))
+                }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 }

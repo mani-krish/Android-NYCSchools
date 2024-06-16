@@ -5,9 +5,6 @@
     <string name="message_general_api_error">Error while fetching SAT Scores !</string>
     <string name="message_app_exit">Are you sure you want to exit?</string>
     <string name="message_no_data">No Data Found !</string>
-    <string name="title_alert">Alert</string>
-    <string name="label_ok">OK</string>
-    <string name="label_cancel">Cancel</string>
     <string name="label_no">No</string>
     <string name="label_yes">Yes</string>
     <string name="text_format">%1$s, %2$s, %3$s, %4$s</string>
